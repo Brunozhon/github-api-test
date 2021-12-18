@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Github API Test</title>
+  </head>
+  <body>
+    <p></p>
+    <script>
+      function handleResponse(response) {
+        var meta = response.meta
+        var data = response.data
+        var p = document.getElementsByTagName("p")[0]
+        
+        p.innerHTML = "Meta: <br>" + JSON.stringify(meta) + "<br>Data: <br>" + JSON.stringify(data)
+      }
+      
+      var script = document.createElement("SCRIPT")
+      script.src = "https://api.github.com?callback=handleResponse"
+      document.body.appendChild(script)
+    </script>
+  </body>
+</html>
